@@ -18,11 +18,7 @@ const BmiCalculator = () => {
     const calculateBMI = useCallback(() => {
         const heightInMeters = height / 100;
         return (weight / (heightInMeters * heightInMeters)).toFixed(2);
-    }, [height, weight]);
-
-    useEffect(() => {
-        document.title = `Your BMI: ${calculateBMI()}`;
-    }, [calculateBMI]);
+    });
 
     useEffect(() => {
         localStorage.setItem("height", JSON.stringify(height));
